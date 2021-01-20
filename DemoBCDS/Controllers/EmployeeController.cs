@@ -48,7 +48,7 @@ namespace DemoBCDS.Controllers
         [HttpPost]
         public ActionResult DeleteEmployee(EmployeeModel data)
         {
-            db.deleteEmployee(data);
+            db.deleteEmployee(Convert.ToInt32(data.Id));
             return RedirectToAction("Index");
         }
 

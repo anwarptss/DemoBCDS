@@ -62,10 +62,9 @@ namespace DemoBCDS.DAL
             db.SaveChanges();
         }
 
-        public void deleteEmployee(EmployeeModel data)
+        public void deleteEmployee(int Id)
         {
-            int id = Convert.ToInt32(data.Id);
-            var emp = db.tblEmployees.Where(x => x.Id == id).FirstOrDefault();
+            var emp = db.tblEmployees.Where(x => x.Id == Id).FirstOrDefault();
             db.Entry(emp).State = EntityState.Deleted;
             db.SaveChanges();
         }
